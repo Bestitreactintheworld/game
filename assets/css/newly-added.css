@@ -1,0 +1,39 @@
+
+    /* #myCanvas{
+        height: calc(100vh - 265px);
+        width: 100%;
+    } */
+
+
+    .header-top{
+        background-color: #04386e;
+    }
+    footer{
+        display: none;
+    }
+    .line-loader{
+        background-color: #04386e;
+    }
+    .fill-line{
+        background-color: white;
+       
+    }
+    .logo1{
+        width: 125px;
+    }
+
+    .rotateimage{
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+         object-position: 0; 
+        /* -webkit-animation: slideBackground 30s linear infinite;
+        -moz-animation: slideBackground 30s linear infinite;
+        animation: slideBackground 30s linear infinite; */
+    }
+
+    .tabs-navs .active-line{
+        width: 100%;
+    }
