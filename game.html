@@ -1136,7 +1136,7 @@
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
         </div>
@@ -1774,10 +1774,16 @@
         ///  1 is user Id, TO DO !!!!!!!!!!!
 
         function updateBalance() {
+            let username = '11171551'; // Replace with actual username
+            let password = '60-dayfreetrial'; // Replace with actual password
+            let base64Credential = btoa(username + ':' + password);
             $.ajax({
-                url: 'http://localhost:5172/api/aviator/1/userBalance',
+                url: 'http://vincentbieniek-001-site1.ktempurl.com/api/aviator/1/userBalance',
                 type: "GET",
                 contentType: 'application/json',
+                headers: {
+                    "Authorization": "Basic " + base64Credential
+                },
                 success: function (result) {
                     console.log(result);
                     $("#wallet_balance").text(result + '$');
@@ -1790,17 +1796,24 @@
         }
 
         function getCashOutByUserId() {
+            let username = '11171551'; // Replace with actual username
+            let password = '60-dayfreetrial'; // Replace with actual password
+            let base64Credential = btoa(username + ':' + password);
+            console.log(base64Credential)
             $.ajax({
-                url: 'http://localhost:5172/api/aviator/1/getCashOutByUserId',
+                url: 'http://vincentbieniek-001-site1.ktempurl.com/api/aviator/1/getCashOutByUserId',
                 type: "GET",
                 contentType: 'application/json',
+                headers: {
+                    "Authorization": "Basic " + base64Credential
+                },
                 success: function (result) {
                     var container = document.getElementById("my_bet_list");
-                    container.innerHTML='';
+                    container.innerHTML = '';
                     result.forEach(function (bet) {
                         var betDiv = document.createElement("div");
                         betDiv.classList.add("list-items");
-                        
+
                         // Populate the bet div with data
                         betDiv.innerHTML = `
                                     <div class="column-1 users fw-normal">${bet.cashoutDateTime.substring(11, 16)}</div>
